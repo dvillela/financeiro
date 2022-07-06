@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+<h:head>
+	<title>Calculadora JSF</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h:messages />
+		<h1>Calculadora FEMA</h1>
+		<h2>Domingos de C Villela JR</h2>
+		<h:outputText value="Digite o primeiro número:" />
+		<h:inputText value="#{calc.num1}">
+			<f:convertNumber minFractionDigits="3" maxFractionDigits="3"
+				locale="pt_BR" />
+		</h:inputText>
+		<br />
+		<h:outputText value="Digite o segundo número:" />
+		<h:inputText value="#{calc.num2}">
+			<f:convertNumber minFractionDigits="2" maxFractionDigits="2"
+				locale="pt_BR" />
+		</h:inputText>
+		<br />
+		<h:commandButton value="+" action="#{calc.soma}"
+			rendered="#{calc.rendered}" />
+		<h:commandButton value="-" action="#{calc.subtracao}"
+			rendered="#{calc.rendered}" />
+		<h:commandButton value="X" action="#{calc.multiplicacao}"
+			rendered="#{calc.rendered}" />
+		<h:commandButton value="/" action="#{calc.divisao}"
+			rendered="#{calc.rendered}" />
+		<br />
+
+		<h1>
+			<h:outputText value="O resultado da #{calc.operacao} é " />
+			<h:outputText value="#{calc.resp}">
+				<f:convertNumber type="currency" locale="pt_BR"
+					minFractionDigits="2" maxFractionDigits="2" />
+			</h:outputText>
+		</h1>
+
+	</h:form>
+
+</h:body>
+</html>

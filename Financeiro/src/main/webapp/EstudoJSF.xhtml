@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:composite="http://xmlns.jcp.org/jsf/composite">
+<h:head>
+	<title>Componentes do JSF</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h1>O componente h:inputText</h1>
+		<h:inputText value="#{olaBean.nome}" />
+		<hr />
+		<h1>O componente h:inputSecret</h1>
+		<h:inputSecret value="#{olaBean.nome}" />
+		<hr />
+		<h1>O componente h:inputTextarea</h1>
+		<h:inputTextarea cols="40" rows="3" value="#{olaBean.nome}" />
+		<hr />
+		<h1>O componente h:outputText</h1>
+		<h:outputText value="Bem-vindo " />
+		<hr />
+		<h1>O componente h:outputLabel</h1>
+		<h:outputLabel value="Nome:" for="nomeInput" />
+		<h:inputText id="nomeInput" />
+		<hr />
+		<h1>O componente h:graphicImage</h1>
+		<h:graphicImage library="fema" name="logo.png" />
+		<hr />
+		<h1>O componente h:selectOneMenu</h1>
+		<h:outputLabel value="Time de futebol favorito: " for="timeFutebol" />
+		<h:selectOneMenu id="timeFutebol">
+			<f:selectItem itemValue="Corinthians" itemLabel="Timao" />
+			<f:selectItem itemValue="Flamengo" itemLabel="Mengão" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectOneMenu>
+		<hr />
+		<h1>O componente h:selectManyMenu</h1>
+		<h:outputLabel value="Times de futebol favoritos: " for="timeFutebol1" />
+		<h:selectManyMenu value="#{cadastroTorcedorBean.timesFavoritos}"
+			id="timeFutebol1">
+			<f:selectItem itemValue="Corinthians" />
+			<f:selectItem itemValue="Flamengo" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectManyMenu>
+		<hr />
+		<h1>O componente h:selectManyListbox</h1>
+		<h:outputLabel value="Times de futebol favoritos: " for="timeFutebol2" />
+		<h:selectManyListbox value="#{cadastroTorcedorBean.timesFavoritos}"
+			id="timeFutebol2" size="4">
+			<f:selectItem itemValue="Corinthians" />
+			<f:selectItem itemValue="Flamengo" />
+			<f:selectItem itemValue="Palmeiras" />
+			<f:selectItem itemValue="Santos" />
+			<f:selectItem itemValue="São Paulo" />
+			<f:selectItem itemValue="Vasco" />
+			<f:selectItem itemValue="Outro" />
+		</h:selectManyListbox>
+		<hr />
+		<h1>O componente h:selectOneRadio</h1>
+		<h:selectOneRadio id="sexo" layout="pageDirection">
+			<f:selectItem itemValue="M" itemLabel="Masculino" />
+			<f:selectItem itemValue="F" itemLabel="Feminino" />
+		</h:selectOneRadio>
+		<hr />
+		<h1>O componente h:selectBooleanCheckbox</h1>
+		<h:selectBooleanCheckbox id="aceite" />
+		<h:outputLabel value="Li e aceito os termos e condições" for="aceite" />
+		<hr />
+		<h1>O componente h:selectManyCheckbox</h1>
+		<h:selectManyCheckbox id="assuntos" layout="pageDirection">
+			<f:selectItem itemValue="1" itemLabel="Java" />
+			<f:selectItem itemValue="3" itemLabel="Python" />
+			<f:selectItem itemValue="4" itemLabel="Ruby" />
+			<f:selectItem itemValue="4" itemLabel="PHP" />
+			<f:selectItem itemValue="5" itemLabel="Métodos ágeis" />
+		</h:selectManyCheckbox>
+		<hr />
+	</h:form>
+</h:body>
+</html>
